@@ -6,11 +6,13 @@ class window.App extends Backbone.Model
     @set 'playerHand', deck.dealPlayer()
     @set 'dealerHand', deck.dealDealer()
 
+    slowDown = => @get('dealerHand').hit()
+
     # playerHand listeners
     @get('playerHand').on 'stand', (->
       @get('dealerHand').at(0).flip()
       if @get('playerHand').scores()[0] <= 21
-        @get('dealerHand').hit()
+        setTimeout slowDown, 2000
       else
         @get('dealerHand').stand()
       ), @
@@ -19,7 +21,9 @@ class window.App extends Backbone.Model
       ), @
 
     # dealerHand listeners
-    @get('dealerHand').on 'hit', (-> @get('dealerHand').hit()), @
+    @get('dealerHand').on 'hit', (->
+      setTimeout slowDown, 2000
+    ), @
     @get('dealerHand').on 'stand', @gameOver, @
 
   gameOver: ->
