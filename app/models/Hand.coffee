@@ -8,12 +8,16 @@ class window.Hand extends Backbone.Collection
 
   hit: ->
     if @isDealer
-      if @scores()[0] < 17
+      if @scores().length > 1 and @scores()[1] > 16 and @scores()[1] < 22
+        @stand()
+      else if @scores()[0] < 17
         @add(@deck.pop()).last()
-        @trigger('hit')
+        @trigger 'hit'
+      else
+        @stand()
     else
       @add(@deck.pop()).last()
-      @trigger('hit')
+      @trigger 'hit'
 
   stand: ->
     @trigger('stand')
@@ -29,3 +33,4 @@ class window.Hand extends Backbone.Collection
       score + if card.get 'revealed' then card.get 'value' else 0
     , 0
     if hasAce then [score, score + 10] else [score]
+
