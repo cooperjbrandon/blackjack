@@ -3,7 +3,7 @@ class window.Hand extends Backbone.Collection
   model: Card
 
   initialize: (array, @deck, @isDealer) ->
-    
+
 
   hit: ->
     if @isDealer
