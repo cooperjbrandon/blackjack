@@ -7,8 +7,13 @@ class window.Hand extends Backbone.Collection
 
 
   hit: ->
-    @add(@deck.pop()).last()
-    @trigger('hit')
+    if @isDealer
+      if @scores()[0] < 17
+        @add(@deck.pop()).last()
+        @trigger('hit')
+    else
+      @add(@deck.pop()).last()
+      @trigger('hit')
 
   stand: ->
     @trigger('stand')

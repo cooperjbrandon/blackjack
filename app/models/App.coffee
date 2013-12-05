@@ -9,3 +9,4 @@ class window.App extends Backbone.Model
     @get('playerHand').on 'hit', (->
       if @get('playerHand').scores()[0] > 21 then @get('playerHand').stand()
       ), @
+    @get('dealerHand').on 'hit', (-> @get('dealerHand').hit()), @
