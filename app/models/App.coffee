@@ -12,7 +12,7 @@ class window.App extends Backbone.Model
     @get('playerHand').on 'stand', (->
       @get('dealerHand').at(0).flip()
       if @get('playerHand').scores()[0] <= 21
-        setTimeout slowDown, 2000
+        setTimeout slowDown, 1500
       else
         @get('dealerHand').stand()
       ), @
@@ -22,7 +22,7 @@ class window.App extends Backbone.Model
 
     # dealerHand listeners
     @get('dealerHand').on 'hit', (->
-      setTimeout slowDown, 2000
+      setTimeout slowDown, 1500
     ), @
     @get('dealerHand').on 'stand', @gameOver, @
 
