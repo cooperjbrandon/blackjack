@@ -2,7 +2,8 @@ class window.CardView extends Backbone.View
 
   className: 'card'
 
-  template: _.template '<img width="100px" height="140px" src="app/cardImages/cards/<%= rankName %>-<%= suitName %>.png"></img>'
+  templateCards: _.template '<img width="100px" height="140px" src="app/cardImages/cards/<%= rankName %>-<%= suitName %>.png"></img>'
+  templateCardBack: _.template '<img width="100px" height="140px" src="app/cardImages/card-back.png"></img>'
 
   initialize: ->
     @model.on 'change', => @render
@@ -10,7 +11,10 @@ class window.CardView extends Backbone.View
 
   render: ->
     @$el.children().detach().end().html
-    @$el.html @template @model.attributes
+    if @model.get 'revealed'
+      @$el.html @templateCards @model.attributes
+    else
+      @$el.html @templateCardBack @model.attributes
     @$el.addClass 'covered' unless @model.get 'revealed'
 
 
