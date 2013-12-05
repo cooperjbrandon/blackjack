@@ -19,3 +19,7 @@ body {
   background-image: url("../app/blackFlowers.png");
   color: white;
 }
+
+.bettor {
+  color: #FF0000 ;
+}
