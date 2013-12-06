@@ -19,5 +19,5 @@ class window.BetView extends Backbone.View
     @$el.html @template @model.attributes
 
   setBet: ->
-    @$el.find('button').after('<p class="bettor">('+ @$('#betAmount').val()+')</p>')
+    $('.betAmount').append('<p class="bettor">Bet Amount: '+ @$('#betAmount').val()+'</p>')
     @model.set 'betAmount', @$('#betAmount').val()

@@ -3,6 +3,7 @@ class window.AppView extends Backbone.View
   template: _.template '
     <div class="betting-container"></div>
     <div class="dealer-hand-container"></div>
+    <div class="betAmount"></div>
     <div class="player-hand-container"></div>
     <div class="hit-stand-buttons"><button class="hit-button">Hit</button> <button class="stand-button">Stand</button></div>
   '

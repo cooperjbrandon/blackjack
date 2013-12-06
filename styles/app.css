@@ -19,7 +19,9 @@ body {
 }
 
 .bettor {
-  color: #FF0000 ;
+  color: #FF0000;
+  margin: 0;
+  font-size: 23;
 }
 
 .player-hand-container, .dealer-hand-container {
@@ -32,6 +34,12 @@ body {
 
 .hit-stand-buttons button {
   display: inline-block;
+}
+
+.betAmount {
+  height: 40px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 button {
