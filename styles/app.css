@@ -1,16 +1,11 @@
 @font-face { font-family: typewriter; src: url('fonts/1942.ttf'); } 
 
 .card {
-  float: left;
-  border: solid 1px black;
   width: 100px;
   border-radius: 5px;
   height: 140px;
-  margin-right: 20px;
-}
-
-.covered {
-  background-color: black;
+  margin: 10px;
+  display: inline-block;
 }
 
 .hand {
@@ -25,4 +20,8 @@ body {
 
 .bettor {
   color: #FF0000 ;
+}
+
+.player-hand-container, .dealer-hand-container {
+  text-align: center;
 }
