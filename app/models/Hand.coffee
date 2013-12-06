@@ -32,7 +32,9 @@ class window.Hand extends Backbone.Collection
       score + if card.get 'revealed' then card.get 'value' else 0
     , 0
     if hasAce
-      if @.at(0).get 'revealed'
+      if not @.at(1).get 'revealed'
+        [score]
+      else if @.at(0).get 'revealed'
         [score, score + 10]
       else if @.at(1).get('value') is 1
         [score, score + 10]
@@ -40,4 +42,3 @@ class window.Hand extends Backbone.Collection
         [score]
     else
       [score]
-
