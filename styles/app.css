@@ -4,7 +4,7 @@
   width: 100px;
   border-radius: 5px;
   height: 140px;
-  margin: 10px;
+  /*margin: 10px;*/
   display: inline-block;
 }
 
@@ -25,3 +25,38 @@ body {
 .player-hand-container, .dealer-hand-container {
   text-align: center;
 }
+
+.hit-stand-buttons {
+  text-align: center;
+}
+
+.hit-stand-buttons button {
+  display: inline-block;
+}
+
+button {
+   width: 90px;
+   height: 32px;
+   text-align: center;
+   background: #3b2222;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ff0000), to(#3b2222));
+   background: -webkit-linear-gradient(top, #ff0000, #3b2222);
+   background: -moz-linear-gradient(top, #ff0000, #3b2222);
+   background: -ms-linear-gradient(top, #ff0000, #3b2222);
+   background: -o-linear-gradient(top, #ff0000, #3b2222);
+   margin-top: 30px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 16px;
+   font-family: 'typewriter', Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+button:hover {
+   border-top-color: #ded7d7;
+   background: #ded7d7;
+   color: #780417;
+   }

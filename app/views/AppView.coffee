@@ -1,10 +1,10 @@
 class window.AppView extends Backbone.View
 
   template: _.template '
-    <button class="hit-button">Hit</button> <button class="stand-button">Stand</button>
+    <div class="betting-container"></div>
     <div class="dealer-hand-container"></div>
     <div class="player-hand-container"></div>
-    <div class="betting-container"></div>
+    <div class="hit-stand-buttons"><button class="hit-button">Hit</button> <button class="stand-button">Stand</button></div>
   '
 
   events:
@@ -27,7 +27,7 @@ class window.AppView extends Backbone.View
     @$('.betting-container').html betView.el
 
   addNextGameButton: ->
-    @$el.find('.stand-button').after('<button class="nextGame-button">Next Game</button>')
+    @$el.find('.hit-stand-buttons').after('<button class="nextGame-button">Next Game</button>')
 
   newGame: ->
     @model.set 'playerHand', @model.get('deck').dealPlayer()
